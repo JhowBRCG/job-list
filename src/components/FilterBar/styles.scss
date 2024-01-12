@@ -1,0 +1,39 @@
+@use "../../styles/variables";
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  background: variables.$white;
+  border-radius: variables.$border-radius;
+  padding: 2rem 3rem;
+  box-shadow: 0 0 20px #00000027;
+
+  &__tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+
+    li {
+      display: flex;
+    }
+  }
+
+  &__clear-button {
+    display: block;
+    color: variables.$primary-color;
+    margin-left: auto;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .job-card__tag {
+    border-radius: 0;
+    border-top-left-radius: variables.$border-radius;
+    border-bottom-left-radius: variables.$border-radius;
+    pointer-events: none;
+  }
+}

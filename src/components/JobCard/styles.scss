@@ -1,0 +1,130 @@
+@use "../../styles/variables";
+@use "../../styles/mixins";
+
+.job-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: variables.$white;
+  border-radius: variables.$border-radius;
+  padding: 4rem 3rem;
+  box-shadow: 0 0 20px #00000027;
+
+  @include mixins.mediumDevices {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+
+  @include mixins.smallDevices {
+    gap: 2rem;
+  }
+
+  .job-card__hr {
+    width: 100%;
+    display: none;
+
+    @include mixins.mediumDevices {
+      display: block;
+    }
+  }
+
+  .job-card__left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+
+    @include mixins.mediumDevices {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .job-card__logo {
+    max-width: 75px;
+    height: 75px;
+    border-radius: 50%;
+
+    @include mixins.smallDevices {
+      position: absolute;
+      top: -60px;
+      max-width: 50px;
+      height: 50px;
+    }
+  }
+
+  .job-card__info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @include mixins.smallDevices {
+      gap: 2rem;
+    }
+
+    .job-card__header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .new {
+        background: variables.$primary-color;
+        color: variables.$white;
+        font-weight: 500;
+        padding: 0.5rem 0.7rem 0.3rem 0.7rem;
+        border-radius: 20px;
+        text-align: center;
+        font-size: 1.3rem;
+      }
+
+      .featured {
+        @extend .new;
+        background: variables.$black;
+        color: variables.$white;
+      }
+    }
+
+    .job-card__company-name {
+      color: variables.$primary-color;
+    }
+
+    .job-card__position {
+      font-size: 1.9rem;
+      cursor: pointer;
+
+      &:hover {
+        color: variables.$primary-color;
+      }
+    }
+
+    .job-card__date {
+      display: flex;
+      gap: 3rem;
+
+      small {
+        position: relative;
+        color: variables.$dark-grayish-cyan;
+      }
+
+      small + small {
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          margin: auto auto auto -16px;
+          width: 3px;
+          height: 3px;
+          border-radius: 50%;
+          background: variables.$dark-grayish-cyan;
+        }
+      }
+    }
+  }
+
+  .job-card__tag-list {
+    display: flex;
+    gap: 1.4rem;
+    flex-wrap: wrap;
+  }
+}

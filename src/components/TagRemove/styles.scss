@@ -1,0 +1,15 @@
+@use "../../styles/variables";
+
+.tag-remove {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: variables.$dark-grayish-cyan;
+  background: variables.$primary-color;
+  border-top-right-radius: variables.$border-radius;
+  border-bottom-right-radius: variables.$border-radius;
+  padding: 0.7rem 1rem;
+
+  &:hover {
+    background: variables.$black;
+  }
+}

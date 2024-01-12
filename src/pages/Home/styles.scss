@@ -1,0 +1,35 @@
+@use "../../styles/mixins";
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 145px;
+  padding-bottom: 50px;
+  padding-inline: 1rem;
+  position: relative;
+  gap: 3rem;
+
+  @include mixins.smallDevices {
+    gap: 5rem;
+  }
+
+  > .filter-bar {
+    width: 100%;
+    height: fit-content;
+    max-width: 1000px;
+  }
+}
+
+.job-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 1000px;
+  width: 100%;
+
+  @include mixins.smallDevices {
+    gap: 4.5rem;
+  }
+}
